@@ -1,0 +1,15 @@
+name: "Run on All Branches"
+
+on:
+  push:     # Triggers on push to ANY branch
+  pull_request:  # Optional: also run on PRs to any branch
+
+jobs:
+  show_branch_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show current branch name
+        run: echo "Running on branch: ${{ github.ref_name }}"
+
+      - name: List files in repo
+        run: ls -al
